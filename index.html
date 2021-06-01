@@ -226,8 +226,8 @@
             <div class="sign">
                 <button id="facebook"><i class="fab fa-facebook-f"></i>Sign up through Facebook</button>
                 <button><i class="fab fa-instagram"></i>Sign up through Instagram</button>
-                <button><i class="fab fa-twitter"></i>Sign up through Twitter</button>
-                <button><i class="fab fa-google"></i>Sign up through Email</button>
+                <button id="twitter"><i class="fab fa-twitter"></i>Sign up through Twitter</button>
+                <button id="google"><i class="fab fa-google"></i>Sign up through Email</button>
             </div>
         </div>
 
@@ -306,7 +306,10 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();const facebook  = document.getElementById("facebook")
+    firebase.analytics();
+    const facebook  = document.getElementById("facebook")
+    const twitter = document.getElementById("twitter")
+    const google = document.getElementById("google")
     console.log(facebook)
     facebook.addEventListener("click",function(){
         var provider = new firebase.auth.FacebookAuthProvider()
@@ -347,6 +350,30 @@
           // The signed-in user info.
           var user = result.user;
           alert(token)
+        })
+    })
+
+    twitter.addEventListener("click",function(){
+        var provider = new firebase.auth.TwitterAuthProvider();
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+          // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+          // You can use these server side with your app's credentials to access the Twitter API.
+        var token = result.credential.accessToken;
+        var secret = result.credential.secret;
+          // The signed-in user info.
+        var user = result.user;
+        })
+    })
+
+    google.addEventListener("click",function(){
+        var provider = new firebase.auth.GoogleAuthProvider();
+        
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          var token = result.credential.accessToken;
+          // The signed-in user info.
+          var user = result.user;
+     
         })
     })
     </script>
