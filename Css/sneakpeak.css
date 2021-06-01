@@ -908,6 +908,14 @@ footer .ftr-cntnrs .ftr-cntnr.soc ul li a i{
     .sp .image{
         width: 360px !important;
     }
+
+    #signup .sign{
+        left: 40% !important;
+    }
+    
+    #signup .sign button{
+        width: 135% !important;
+    }
 }
 
 @media(max-width: 375px){
