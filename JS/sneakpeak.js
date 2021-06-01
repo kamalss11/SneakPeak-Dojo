@@ -8,11 +8,22 @@ const bars = document.querySelector(".bars")
 const links = document.querySelector(".links")
 const logo = document.querySelector(".logo")
 const inputs = document.querySelectorAll(".input")
+const sig = document.querySelector(".signup")
+const signup = document.querySelector("#signup")
+const cls = document.querySelector(".fa-times")
+
+
+sig.addEventListener("click",function(){
+    signup.classList.add("active")
+})
+
+cls.addEventListener("click",function(){
+    signup.classList.remove("active")
+})
 
 si.addEventListener("click",menu)
 function menu(){
     si.classList.toggle("show")
-    icon.classList.toggle("show")
 }
 
 bars.addEventListener("click",navbar)
