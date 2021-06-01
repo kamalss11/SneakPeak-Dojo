@@ -22,28 +22,14 @@
                 <div class="bars">
                     <span></span>
                 </div>
-                
+
                 <div class="logo">
                     <img src="./Image/DOJO.png">
                 </div>
 
                 <ul class="links">
-                    <li class="si">
-                        <p>
-                            Sneak Peak <i class="fas fa-sort-down i" ></i>
-                        </p>
-
-                        <div class="link-info">
-                            <p>Hygiene</p>
-                            <p>Sneak Peak</p>
-                            <p>Pro</p>
-                            <p>Advertise</p>
-                            <p>Merchant Apps</p>
-                            <p>Kitchens</p>
-                        </div>
-                    </li>
-                    <li><a href="#">Add a Restuarant</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li class="si"><a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfa-xm6eAppUEYWi4WGojrPhpeD83Pk-fd6eWnTabkXHQyCJw/formResponse">Link your services</a></li>
+                    <li><a href="tel:+91 9324648692">Contact Us</a></li>
                 </ul>
             </nav>
 
@@ -57,13 +43,13 @@
             </article>
         </header>
 
-        <div class="section" >        
+        <div class="section" >
             <div class="what" id="more">
                 <div class="what-info">
                     <h1>What is DOJO basics?</h1>
 
                     <p>
-                        A platform for our customers to build their social presence in such a difficult time, through the services provided. We help our customers to create a brand name online that upholds their reputations throughout. As said, DOJO Basics is providing a lot of services for our customers, some free and others paid. We know that the base is to generate more leads and increase sales for our customers. And through our services, we tend to do exactly that. Once you sign up for DOJO Basics, you will get listed on our DOJO app for free. This, in itself, helps you to generate more leads. 
+                        A platform for our customers to build their social presence in such a difficult time, through the services provided. We help our customers to create a brand name online that upholds their reputations throughout. As said, DOJO Basics is providing a lot of services for our customers, some free and others paid. We know that the base is to generate more leads and increase sales for our customers. And through our services, we tend to do exactly that. Once you sign up for DOJO Basics, you will get listed on our DOJO app for free. This, in itself, helps you to generate more leads.
                     </p>
                 </div>
 
@@ -189,9 +175,9 @@
                                 </p>
                             </div>
                         </div>
-                        
+
                         <span class="c-btns prev"><i class="fas fa-chevron-left"></i></span>
-                            
+
                         <span class="c-btns next"><i class="fas fa-chevron-right"></i></span>
                     </div>
                 </div>
@@ -235,14 +221,24 @@
             </div>
         </div>
 
+        <div id="signup">
+            <i class="fas fa-times"></i>
+            <div class="sign">
+                <button id="facebook"><i class="fab fa-facebook-f"></i>Sign up through Facebook</button>
+                <button><i class="fab fa-instagram"></i>Sign up through Instagram</button>
+                <button><i class="fab fa-twitter"></i>Sign up through Twitter</button>
+                <button><i class="fab fa-google"></i>Sign up through Email</button>
+            </div>
+        </div>
+
         <footer>
             <div class="ftr-cntnrs">
                 <div class="ftr-cntnr">
                     <img src="Image/DOJO.png">
                     <p>Registered as Hunger Heroes. <br>
                         Under Indian Society Registration Act XXI, 1860
-                    </p>    
-                    
+                    </p>
+
                     <p>
                         All donations are tax-exempted as eligible under section 80G of the the Income Tax Act, 1961.
                     </p>
@@ -279,7 +275,7 @@
                 All donations are tax-exempted as eligible under section *0g of the income tax act,1961
             </div>
         </footer>
-    
+
     </div>
 
     <script src="JS/sneakpeak.js"></script>
@@ -289,5 +285,71 @@
             once: true
         });
     </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBkVEcCHoh7QE8RUdenoyfQKPettBKlZ-I",
+        authDomain: "sneakpeak-efada.firebaseapp.com",
+        projectId: "sneakpeak-efada",
+        storageBucket: "sneakpeak-efada.appspot.com",
+        messagingSenderId: "695224253410",
+        appId: "1:695224253410:web:322431da965c84fe7a17bb",
+        measurementId: "G-DZYXS4KBHT"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();const facebook  = document.getElementById("facebook")
+    console.log(facebook)
+    facebook.addEventListener("click",function(){
+        var provider = new firebase.auth.FacebookAuthProvider()
+        // firebase
+        // .auth()
+        // .signInWithPopup(provider)
+        // .then
+
+        // firebase.auth().signInWithPopup(new firebase.auth.FacebookAuthProvider()).then((result) => {
+        //     /** @type {firebase.auth.OAuthCredential} */
+        //     var credential = result.credential;
+
+        //     // The signed-in user info.
+        //     var user = result.user;
+
+        //     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        //     var accessToken = credential.accessToken;
+
+        //     // ...
+        // })
+        // .catch((error) => {
+        //     console.log(error)
+        //     // Handle Errors here.
+        //     var errorCode = error.code;
+        //     var errorMessage = error.message;
+        //     // The email of the user's account used.
+        //     var email = error.email;
+        //     // The firebase.auth.AuthCredential type that was used.
+        //     var credential = error.credential;
+
+        //     // ...
+        // });
+
+        var provider = new firebase.auth.FacebookAuthProvider();
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+          // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+          var token = result.credential.accessToken;
+          // The signed-in user info.
+          var user = result.user;
+          alert(token)
+        })
+    })
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
 </body>
 </html>
